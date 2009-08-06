@@ -2,9 +2,9 @@ Name:		sobby
 Version:	0.4.5
 Release:	%mkrel 1
 Summary:    TODO
-URL:		http://prosody.im/
-Group:		TODO
-License:	TODO
+URL:		http://gobby.0x539.de/trac/
+Group:		System/Servers
+License:	GPLv2+
 Requires(pre):	rpm-helper
 Requires(post):	rpm-helper
 Requires(preun):	rpm-helper
