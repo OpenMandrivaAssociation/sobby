@@ -12,7 +12,6 @@ Requires(postun):	rpm-helper
 Source0:	http://releases.0x539.de/sobby/%name-%version.tar.gz
 Source1:	%name.conf
 Source2:	%name.init
-Source3:	autosave.obby
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  pkgconfig(net6-1.3)
 BuildRequires:  pkgconfig(obby-0.4) 
@@ -40,7 +39,7 @@ mkdir -p %{buildroot}/%{_initrddir}
 cp %{SOURCE1} %{buildroot}/%{_sysconfdir}
 cp %{SOURCE2} %{buildroot}/%{_initrddir}/%name
 mkdir -p %{buildroot}/var/lib/%name/{command,tmp}
-cp %{SOURCE3} %{buildroot}/var/lib/%name/
+touch  %{buildroot}/var/lib/%name/autosave.obby
 
 %clean
 rm -rf ${RPM_BUILD_ROOT}
@@ -50,6 +49,15 @@ rm -rf ${RPM_BUILD_ROOT}
 
 %post
 %_post_service %name
+if [ ! -f /var/lib/%name/autosave.obby ] ; then 
+cat <<EOF > /var/lib/%name/autosave.obby
+!obby
+session version="0.4.7"
+ user_table
+ chat
+EOF
+
+fi
 
 %preun
 %_preun_service %name
