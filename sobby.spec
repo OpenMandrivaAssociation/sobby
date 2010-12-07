@@ -1,6 +1,6 @@
 Name:		sobby
 Version:	0.4.7
-Release:	%mkrel 2
+Release:	%mkrel 3
 Summary:    Standalone collaborative editing server, to use with gobby 
 URL:		http://gobby.0x539.de/trac/
 Group:		System/Servers
