@@ -1,6 +1,6 @@
 Name:		sobby
-Version:	0.4.7
-Release:	%mkrel 3
+Version:	0.4.8
+Release:	1
 Summary:    Standalone collaborative editing server, to use with gobby 
 URL:		http://gobby.0x539.de/trac/
 Group:		System/Servers
@@ -12,7 +12,6 @@ Requires(postun):	rpm-helper
 Source0:	http://releases.0x539.de/sobby/%name-%version.tar.gz
 Source1:	%name.conf
 Source2:	%name.init
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  pkgconfig(net6-1.3)
 BuildRequires:  pkgconfig(obby-0.4) 
 BuildRequires:  pkgconfig(glibmm-2.4)
@@ -41,9 +40,6 @@ cp %{SOURCE2} %{buildroot}/%{_initrddir}/%name
 mkdir -p %{buildroot}/var/lib/%name/{command,tmp}
 touch  %{buildroot}/var/lib/%name/autosave.obby
 
-%clean
-rm -rf ${RPM_BUILD_ROOT}
-
 %pre
 %_pre_useradd %{name} /var/lib/%name /sbin/nologin
 
@@ -52,7 +48,7 @@ rm -rf ${RPM_BUILD_ROOT}
 if [ ! -f /var/lib/%name/autosave.obby ] ; then 
 cat <<EOF > /var/lib/%name/autosave.obby
 !obby
-session version="0.4.7"
+session version="0.4.8"
  user_table
  chat
 EOF
