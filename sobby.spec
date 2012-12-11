@@ -71,3 +71,40 @@ fi
 %config(noreplace) %{_sysconfdir}/%name.conf
 %attr(0755,root,root)%{_initrddir}/%name
 %ghost %attr(0600,sobby,sobby) /var/lib/%name/autosave.obby
+
+
+%changelog
+* Mon Feb 20 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.4.8-1
++ Revision: 778116
+- version update 0.4.8
+
+* Wed Dec 08 2010 Oden Eriksson <oeriksson@mandriva.com> 0.4.7-3mdv2011.0
++ Revision: 614935
+- the mass rebuild of 2010.1 packages
+
+* Tue Jun 01 2010 Michael Scherer <misc@mandriva.org> 0.4.7-2mdv2010.1
++ Revision: 546838
+- release
+- correctly create the ghosted file
+- fix some english mistake
+- fix wrong shell redirection
+
+* Thu Feb 11 2010 Michael Scherer <misc@mandriva.org> 0.4.7-1mdv2010.1
++ Revision: 504042
+- update to 0.4.7
+- fix rpmlint error in the initscript ( add Default-Stop, add a reload entry )
+
+* Fri Oct 02 2009 Lonyai Gergely <aleph@mandriva.org> 0.4.5-2mdv2010.0
++ Revision: 452478
+- release
+- add a initsrcipt and a framework
+
+* Thu Aug 06 2009 Michael Scherer <misc@mandriva.org> 0.4.5-1mdv2010.0
++ Revision: 410824
+- add buildrequires
+- do not try to package it as a daemon, this seems too complex for the moment
+- fix summary and description
+- fix url
+- add License and Group tag
+- import sobby
+
