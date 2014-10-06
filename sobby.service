@@ -1,0 +1,15 @@
+[Unit]
+Description=A standalone obby server
+After=syslog.target network.target
+Wants=network.target
+
+[Service]
+User=sobby
+Type=simple
+ExecStart=/usr/bin/sobby -c /etc/sobby.conf
+Restart=on-abort
+SyslogIdentifier=sobby
+EnvironmentFile=-/etc/sysconfig/sobby
+
+[Install]
+WantedBy=multi-user.target
