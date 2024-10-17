@@ -2,7 +2,7 @@ Name:		sobby
 Version:	0.4.8
 Release:	4
 Summary:	Standalone collaborative editing server, to use with gobby 
-URL:		http://gobby.0x539.de/trac/
+URL:		https://gobby.0x539.de/trac/
 Group:		System/Servers
 License:	GPLv2+
 Source0:	http://releases.0x539.de/sobby/%{name}-%{version}.tar.gz
