@@ -8,6 +8,11 @@ License:	GPLv2+
 Source0:	http://releases.0x539.de/sobby/%{name}-%{version}.tar.gz
 Source1:	%{name}.conf
 Source2:	%{name}.service
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  pkgconfig(net6-1.3)
 BuildRequires:  pkgconfig(obby-0.4)
 BuildRequires:  pkgconfig(glibmm-2.4)
